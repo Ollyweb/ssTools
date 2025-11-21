@@ -199,7 +199,7 @@ function Check-DeviceDeleted {
 Write-Host ""
 Write-Host "┌─ EVENT LOGS ──────────────────────────────────────────────────────┐" -ForegroundColor $C_Section
 
-Check-EventLog "Application" 3079 " Checking for USN Journal Deletion"
+Check-EventLog "Application" 3079 "Checking for USN Journal Deletion"
 Check-RecentEventLog "System" @(104, 1102) "Suspicous Event Logs "
 Check-EventLog "System" 1074 "Last PC Shutdown"
 Check-EventLog "Security" 4616 "System time changed"
@@ -409,4 +409,5 @@ Write-Host "╔═════════════════════�
 Write-Host ("║  {0,-62}  ║" -f "Check Complete") -ForegroundColor $C_Header
 Write-Host ("║  {0,-62}  ║" -f "Thanks for using ") -ForegroundColor $C_Accent
 Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Header
+
 
