@@ -344,7 +344,7 @@ if (Test-Path $prefetchPath) {
     Write-Host ""
     Write-Host "  Prefetch folder not found at: $prefetchPath" -ForegroundColor $C_Error
 }
-Write-Host "└──────────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
+Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 try {
     $recycleBinPath = "$env:SystemDrive" + '\$Recycle.Bin'
@@ -402,6 +402,7 @@ try {
     Write-Host "  Recycle Bin: Unable to access" -ForegroundColor $C_Error
     Write-Host ("  Error: {0}" -f $($_.Exception.Message)) -ForegroundColor 'DarkRed'
 }
+Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Header
