@@ -407,14 +407,11 @@ Write-Host "└─────────────────────�
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Purple
-
-Write-Host -NoNewline "║ " -ForegroundColor $C_Purple
-Write-Host -NoNewline ("{0,-70}" -f "Thanks for using") -ForegroundColor White
-Write-Host " ║" -ForegroundColor $C_Purple
-
 Write-Host ("║ {0,-70} ║" -f "Check Complete") -ForegroundColor $C_Purple
-
+Write-Host ("║ {0,-70} ║" -f "Thanks for using") -ForegroundColor $C_Purple
 Write-Host "╚════════════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Purple
+
+
 
 
 
