@@ -46,7 +46,7 @@ try {
 $drives = Get-CimInstance -ClassName Win32_LogicalDisk | Where-Object { $_.DriveType -ne 5 }
 if ($drives) {
     Write-Host ""
-    Write-Host "┌─ CONNECTED DRIVES ───────────────────────────────────────────────┐" -ForegroundColor $C_Section
+    Write-Host "┌─ CONNECTED DRIVES ─────────────────────────────────────────────────┐" -ForegroundColor $C_Section
 
     foreach ($drive in $drives) {
         $fs = $drive.FileSystem -as [string]
@@ -61,11 +61,11 @@ if ($drives) {
         Write-Host ("  {0,-4}  FileSystem: {1,-8}  FreeSpace: {2}" -f $drive.DeviceID, $fs, $freeStr) -ForegroundColor $C_Info
     }
 
-    Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
+    Write-Host "└────────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 }
 
 Write-Host ""
-Write-Host "┌─ SERVICE STATUS ──────────────────────────────────────────────────┐" -ForegroundColor $C_Section
+Write-Host "┌─ SERVICE STATUS ─────────────────────────────────────────────────────────┐" -ForegroundColor $C_Section
 
 $services = @(
     @{Name = "SysMain"; DisplayName = "SysMain"},
@@ -118,10 +118,10 @@ foreach ($svc in $services) {
         Write-Host ("  {0,-12} {1,-40} {2}" -f $svc.Name, "Not Found", "Stopped") -ForegroundColor $C_Warn
     }
 }
-Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
+Write-Host "└──────────────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 Write-Host ""
-Write-Host "┌─ REGISTRY CHECKS ────────────────────────────────────────────────┐" -ForegroundColor $C_Section
+Write-Host "┌─ REGISTRY CHECKS ─────────────────────────────────────────────────┐" -ForegroundColor $C_Section
 
 $settings = @(
     @{ Name = "CMD"; Path = "HKCU:\Software\Policies\Microsoft\Windows\System"; Key = "DisableCMD"; Warning = "Disabled"; Safe = "Available" },
@@ -199,8 +199,8 @@ function Check-DeviceDeleted {
 Write-Host ""
 Write-Host "┌─ EVENT LOGS ──────────────────────────────────────────────────────┐" -ForegroundColor $C_Section
 
-Check-EventLog "Application" 3079 "USN Journal cleared"
-Check-RecentEventLog "System" @(104, 1102) "Event Logs cleared"
+Check-EventLog "Application" 3079 " Checking for USN Journal Deletion"
+Check-RecentEventLog "System" @(104, 1102) "Suspicous Event Logs "
 Check-EventLog "System" 1074 "Last PC Shutdown"
 Check-EventLog "Security" 4616 "System time changed"
 Check-EventLog "System" 6005 "Event Log Service started"
@@ -344,6 +344,7 @@ if (Test-Path $prefetchPath) {
     Write-Host ""
     Write-Host "  Prefetch folder not found at: $prefetchPath" -ForegroundColor $C_Error
 }
+Write-Host "└──────────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 try {
     $recycleBinPath = "$env:SystemDrive" + '\$Recycle.Bin'
@@ -407,3 +408,4 @@ Write-Host "╔═════════════════════�
 Write-Host ("║  {0,-62}  ║" -f "Check Complete") -ForegroundColor $C_Header
 Write-Host ("║  {0,-62}  ║" -f "Thanks for using ") -ForegroundColor $C_Accent
 Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Header
+
