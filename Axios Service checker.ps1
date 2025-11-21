@@ -405,10 +405,11 @@ try {
 Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 Write-Host ""
-Write-Host "╔════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Header
-Write-Host ("║  {0,-62}  ║" -f "Check Complete") -ForegroundColor $C_Header
-Write-Host ("║  {0,-62}  ║" -f "Thanks for using ") -ForegroundColor $C_Accent
-Write-Host "╚════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Header
+Write-Host "╔════════════════════════════════════════════════════════════════════════╗"
+Write-Host ("║ {0,-70} ║" -f "Check Complete")
+Write-Host ("║ {0,-70} ║" -f "Thanks for using")
+Write-Host "╚════════════════════════════════════════════════════════════════════════╝"
+
 
 
 
