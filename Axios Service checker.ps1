@@ -406,10 +406,12 @@ try {
 Write-Host "└───────────────────────────────────────────────────────────────────┘" -ForegroundColor $C_Section
 
 Write-Host ""
-Write-Host "╔════════════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Purple
-Write-Host ("║ {0,-70} ║" -f "Check Complete") -ForegroundColor $C_Purple
-Write-Host ("║ {0,-70} ║" -f "Thanks for using") -ForegroundColor $C_Purple
-Write-Host "╚════════════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Purple
+Write-Host "╔════════════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Header
+Write-Host ("║ {0,-70} ║" -f "Check Complete") -ForegroundColor $C_Header
+Write-Host ("║ {0,-70} ║" -f "Thanks for using") -ForegroundColor $C_Header
+Write-Host "╚════════════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Header
+
+
 
 
 
