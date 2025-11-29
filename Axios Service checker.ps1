@@ -25,6 +25,7 @@ if (-not $isAdmin) {
    
     exit
 }
+Write-Host "made by _.ayo?" -ForegroundColor $C_Subtext
 
 Write-Host ""
 Write-Host "╔════════════════════════════════════════════════════════════════════════╗" -ForegroundColor $C_Header
@@ -410,6 +411,7 @@ Write-Host "╔═════════════════════�
 Write-Host ("║ {0,-70} ║" -f "Check Complete") -ForegroundColor $C_Header
 Write-Host ("║ {0,-70} ║" -f "Thanks for using") -ForegroundColor $C_Header
 Write-Host "╚════════════════════════════════════════════════════════════════════════╝" -ForegroundColor $C_Header
+
 
 
 
